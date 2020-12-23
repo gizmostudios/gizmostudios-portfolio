@@ -1,0 +1,8 @@
+{
+  "name": "gizmostudios-portfolio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/gizmostudios/gizmostudios-portfolio.git",
+  "author": "Gizmo <bert@gizmostudios.net>",
+  "license": "MIT"
+}
