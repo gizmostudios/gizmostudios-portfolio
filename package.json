@@ -1,0 +1,10 @@
+{
+  "name": "gizmostudios-portfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio",
+  "main": "index.js",
+  "repository": "git@github.com:gizmostudios/gizmostudios-portfolio.git",
+  "author": "Gizmo <bert@gizmostudios.net>",
+  "license": "MIT",
+  "private": false
+}
