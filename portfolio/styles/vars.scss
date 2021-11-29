@@ -1,0 +1,10 @@
+$c-bg: #222;
+$c-text: #eee;
+$c-primary: darkred;
+$c-secondary: crimson;
+
+$spacing: 1rem;
+
+@mixin debug($color: orange) {
+  outline: solid 1px $color;
+}
