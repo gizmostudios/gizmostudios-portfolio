@@ -1,0 +1,21 @@
+@use 'vars';
+
+@mixin debug($color: orange) {
+  outline: solid 1px rgba($color, 0.7);
+}
+
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key(vars.$breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get(vars.$breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

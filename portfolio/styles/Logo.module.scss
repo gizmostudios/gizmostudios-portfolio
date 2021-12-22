@@ -1,0 +1,26 @@
+@use 'utils';
+@use 'sass:math';
+
+.logo {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  /* @include utils.debug(lime); */
+}
+
+.tile {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  transform: scaleY(0.6) rotate(45deg);
+  backdrop-filter: blur(2px);
+  border-radius: 5px;
+
+  &:last-child {
+    top: -0.42rem;
+  }
+
+  &:first-child {
+    bottom: -0.42rem;
+  }
+}

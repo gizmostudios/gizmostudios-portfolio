@@ -1,27 +1,10 @@
-@use 'vars.scss';
+@use 'utils';
 @use 'sass:math';
 
 .container {
-  @include vars.debug();
+  /* @include utils.debug(); */
 }
 
 .main {
-  @include vars.debug(blue);
-}
-
-.navitem {
-  cursor: pointer;
-  color: vars.$c-text;
-  user-select: none;
-
-  display: inline-block;
-  padding: math.div(vars.$spacing, 2) 0;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &.active {
-    color: vars.$c-secondary;
-  }
+  /* @include utils.debug(teal); */
 }

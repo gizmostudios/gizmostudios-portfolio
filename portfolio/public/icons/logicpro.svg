@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 41 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-4,-1)">
+        <g id="logicpro" transform="matrix(-0.982891,0.184187,0.184187,0.982891,44.0914,-4.09557)">
+            <path d="M40.476,8.574C40.476,6.81 39.043,5.377 37.279,5.377L11.709,5.377C9.945,5.377 8.513,6.81 8.513,8.574L8.513,40.047C8.513,41.811 9.945,43.243 11.709,43.243L37.279,43.243C39.043,43.243 40.476,41.811 40.476,40.047L40.476,8.574Z" style="fill:none;stroke:black;stroke-width:2px;"/>
+            <g transform="matrix(0.424673,0,0,0.158393,14.0921,33.8202)">
+                <path d="M40.476,9.164C40.476,7.074 39.843,5.377 39.063,5.377L9.925,5.377C9.145,5.377 8.513,7.074 8.513,9.164L8.513,39.456C8.513,41.546 9.145,43.243 9.925,43.243L39.063,43.243C39.843,43.243 40.476,41.546 40.476,39.456L40.476,9.164Z"/>
+            </g>
+            <g transform="matrix(1,0,0,1,-0.807753,-0.169719)">
+                <circle cx="25.302" cy="20.655" r="8.826" style="fill:none;stroke:black;stroke-width:6.5px;"/>
+            </g>
+            <g transform="matrix(0.278965,0,0,0.278965,17.4357,14.7231)">
+                <circle cx="25.302" cy="20.655" r="8.826" style="fill:none;stroke:black;stroke-width:10.75px;"/>
+            </g>
+        </g>
+    </g>
+</svg>
