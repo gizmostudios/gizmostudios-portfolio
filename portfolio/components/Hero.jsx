@@ -1,9 +1,10 @@
 import Logo from '../components/Logo'
 import styles from '../styles/Hero.module.scss'
 
-const Hero = () => {
+const Hero = ({ id }) => {
   return (
     <div
+      id={id}
       className={`flex flex-col items-center justify-center h-screen ${styles.hero}`}
     >
       <video

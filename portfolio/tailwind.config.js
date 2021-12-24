@@ -21,7 +21,9 @@ module.exports = {
           900: '#802',
           600: '#a03'
         },
-        secondary: 'teal'
+        secondary: {
+          default: '#0aa'
+        }
       }
     },
   },

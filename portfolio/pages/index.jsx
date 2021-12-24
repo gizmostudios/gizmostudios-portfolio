@@ -6,34 +6,42 @@ import HeaderNav from '../components/HeaderNav'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Skillset from '../components/Skillset'
+import Footer from '../components/Footer'
 
-export default function Home() {
-  const menuItems = [
-    { title: 'Home', url: '/' },
-    { title: 'About', url: '/#about' },
-    { title: 'Services', url: '/#services' },
-    { title: 'Portfolio', url: '/portfolio' },
-    { title: 'Contact', url: '/#contact' },
-  ]
+import menuItems from '../constants/menuItems'
 
+const Home = () => {
   return (
     <>
       <Head>
         <title>GizmoStudios</title>
-        <meta name="description" content="GizmoStudios Portfolio" />
+        <meta name="description" content="GizmoStudios Homepage" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <a
+        href="#about"
+        className={`px-4 py-2 bg-primary-default rounded-b-md text-white ${styles.skipContentButton}`}
+      >
+        Skip to content
+      </a>
+
       <HeaderNav items={menuItems} />
 
-      <Hero />
+      <Hero id="home" />
+
+      <Separator />
 
       <main className={`container ${styles.main}`}>
-        <Separator />
-        <About />
-
+        <About id="about" />
         <Skillset />
+
+        <Separator />
       </main>
+
+      <Footer />
     </>
   )
 }
+
+export default Home

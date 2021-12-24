@@ -29,7 +29,7 @@ const skillData = [
       ],
     },
     {
-      title: 'UX/UI',
+      title: 'UX/UI Design',
       value: 0.8,
       icons: [
         { title: 'Sketch', file: 'sketch' },
@@ -140,7 +140,7 @@ const Skillset = () => {
 
   return (
     <div>
-      <h2 className="mb-2 text-3xl">Skillset</h2>
+      <h2 className="mb-4 text-4xl">Skillset</h2>
 
       <div
         className={`flex flex-col md:flex-row md:gap-8 ${styles.skillColumns}`}

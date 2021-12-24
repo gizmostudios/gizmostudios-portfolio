@@ -1,5 +1,19 @@
 @use 'utils';
+@use 'vars';
 @use 'sass:math';
+
+.skipContentButton {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  transition: transform 0.2s ease;
+  z-index: vars.$z-index-max;
+
+  &:focus {
+    transform: translateX(-50%) translateY(0);
+  }
+}
 
 .container {
   /* @include utils.debug(); */

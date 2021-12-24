@@ -1,16 +1,16 @@
 .line {
   path {
-    stroke-dasharray: 300 30;
+    stroke-dasharray: 300 10;
     animation: drawLine 15s ease-in-out alternate infinite;
   }
 }
 
 @keyframes drawLine {
   from {
-    stroke-dasharray: 300 30;
+    stroke-dasharray: 300 10;
   }
 
   to {
-    stroke-dasharray: 150 15;
+    stroke-dasharray: 150 5;
   }
 }
