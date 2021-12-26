@@ -1,4 +1,4 @@
-import Image from 'next/image'
+// import Image from 'next/image'
 
 const footerItems = [
   {
@@ -50,7 +50,7 @@ const Footer = () => {
                       className="relative w-6 h-6 sm:w-8 sm:h-8"
                       style={{ transform: `scale(${item.scale || 1})` }}
                     >
-                      <Image
+                      <img
                         className="invert"
                         layout="fill"
                         src={`/icons/${item.icon}.svg`}

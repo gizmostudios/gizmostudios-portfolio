@@ -18,7 +18,7 @@ module.exports = {
         primary: {
           default: '#802',
           dark: '#402',
-          900: '#802',
+          900: '#800',
           600: '#a03'
         },
         secondary: {

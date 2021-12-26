@@ -1,5 +1,5 @@
 import styles from '../styles/About.module.scss'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Button from '../components/Button'
 
 const About = ({ id }) => {
@@ -21,13 +21,13 @@ const About = ({ id }) => {
 
   const buttons = [
     {
-      link: '/GizmoStudios-CV-2021-v3.pdf',
-      text: 'Download my resume',
-      target: '_blank',
-    },
-    {
       link: '/portfolio',
       text: 'View my portfolio',
+    },
+    {
+      link: '/GizmoStudios-CV-2021-v3.pdf',
+      text: 'Download my CV',
+      target: '_blank',
     },
   ]
 
@@ -63,8 +63,7 @@ const About = ({ id }) => {
               key={index}
               className={`border-2 border-white rounded-lg ${styles.imageContainer}`}
             >
-              <Image
-                priority={index == 0}
+              <img
                 src={`/${image}`}
                 className={`${styles.image}`}
                 layout="fill"

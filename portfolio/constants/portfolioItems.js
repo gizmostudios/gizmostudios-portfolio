@@ -13,8 +13,8 @@ export default [
       'Development',
       'Design',
       'Animation',
+      'Illustration',
       'Project management',
-      'Team lead',
     ],
   },
   {
@@ -30,7 +30,7 @@ export default [
     tags: ['Development', 'Design', 'UX/UI'],
   },
   {
-    title: 'Nationaal Comité 4 en 5 mei',
+    title: '4 en 5 mei',
     path: '4en5mei',
     thumbnail: 'thumbnail.png',
     tags: ['Development'],
@@ -40,6 +40,12 @@ export default [
     path: 'uwv',
     thumbnail: 'thumbnail.png',
     tags: ['Development'],
+  },
+  {
+    title: 'John Petschinger',
+    path: 'john',
+    thumbnail: 'thumbnail.png',
+    tags: ['Animation'],
   },
   {
     title: 'Kettu Bisnis',
@@ -63,6 +69,6 @@ export default [
     title: 'Christian Auzinger',
     path: 'chris',
     thumbnail: 'thumbnail-md.jpg',
-    tags: ['Illustration'],
+    tags: ['Illustration', 'Animation'],
   },
 ]

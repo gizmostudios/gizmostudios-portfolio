@@ -1,0 +1,5 @@
+@use 'vars';
+
+.modalWrapper {
+  z-index: vars.$z-index-max;
+}
