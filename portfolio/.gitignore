@@ -30,5 +30,5 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# public
-/public/
+# public pdf and video files
+/public/**/*[.mp4,.pdf]
