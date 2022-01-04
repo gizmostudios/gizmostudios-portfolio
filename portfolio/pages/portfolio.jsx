@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
@@ -20,27 +20,46 @@ const Portfolio = () => {
   const [modalOpen, setModalOpen] = useState(false)
   const [modalTitle, setModalTitle] = useState('')
   const [modalContents, setModalContents] = useState('')
+  const [currentIndex, setCurrentIndex] = useState(-1)
 
   const handleCardClick = (cardIndex) => {
-    const currentItem = portfolioItems[cardIndex]
+    setCurrentIndex(cardIndex)
+  }
 
-    setModalTitle(currentItem.title)
-    setModalContents(
-      <Project
-        path={`${basePath}/${currentItem.path}`}
-        video={currentItem.video}
-        title={currentItem.title}
-        date={currentItem.date}
-      />
-    )
-    setModalOpen(true)
-    document.body.style.overflow = 'hidden'
+  const handleModalPrev = () => {
+    const newIndex =
+      currentIndex > 0 ? currentIndex - 1 : portfolioItems.length - 1
+    setCurrentIndex(newIndex)
+  }
+
+  const handleModalNext = () => {
+    const newIndex =
+      currentIndex < portfolioItems.length - 1 ? currentIndex + 1 : 0
+    setCurrentIndex(newIndex)
   }
 
   const handleModalClose = () => {
     setModalOpen(false)
+    setCurrentIndex(-1)
     document.body.style.overflow = 'visible'
   }
+
+  const openModal = (index) => {
+    if (index < 0 || index > portfolioItems.length - 1) return
+
+    const currentItem = portfolioItems[index]
+
+    setCurrentIndex(index)
+    setModalTitle(currentItem.title)
+    setModalContents(<Project data={currentItem} />)
+    setModalOpen(true)
+    document.body.style.overflow = 'hidden'
+  }
+
+  useEffect(() => {
+    openModal(currentIndex)
+    console.log(currentIndex)
+  }, [currentIndex])
 
   return (
     <div>
@@ -116,7 +135,12 @@ const Portfolio = () => {
       <Footer />
 
       {modalOpen && (
-        <Modal title={modalTitle} onClose={handleModalClose}>
+        <Modal
+          title={modalTitle}
+          onPrev={handleModalPrev}
+          onNext={handleModalNext}
+          onClose={handleModalClose}
+        >
           {modalContents}
         </Modal>
       )}

@@ -4,6 +4,7 @@ import styles from '../styles/Card.module.scss'
 const Card = ({ image, className, children, onClick }) => {
   return (
     <div
+      onClick={onClick}
       className={`
         bg-white
         text-black
@@ -20,7 +21,7 @@ const Card = ({ image, className, children, onClick }) => {
         ${className}
       `}
     >
-      <div className="relative w-full aspect-square" onClick={onClick}>
+      <div className="relative w-full aspect-square">
         <img src={image} layout="fill" />
       </div>
       <div className={`p-4 ${styles.cardDescription}`}>{children}</div>

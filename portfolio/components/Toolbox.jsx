@@ -23,7 +23,6 @@ const Icons = ({ icons }) => {
             src={`${path}/${icon.file}.svg`}
             width="48"
             height="48"
-            unoptimized
           />
         </div>
         <p className="text-center text-white opacity-40">{icon.title}</p>

@@ -4,7 +4,19 @@ export default [
     path: 'salarisjobs',
     thumbnail: 'thumbnail.png',
     tags: ['Development'],
-    video: 'salarisjobs-video.mp4'
+    heroVideo: 'video-main.mp4',
+    phoneImage: 'iphone2.jpg',
+    tabletImage: 'ipad.jpg',
+    desktopImage: 'imac2.jpg',
+    year: '2021',
+    description: `
+      For a Dutch internet agency I was tasked to build the responsive static front-end for this website as quick and vanilla as possible,
+      so without using any CSS frameworks or JS libraries. The code needed to be picked up by their engineer to be hooked
+      into their Wordpress system so it was crucial to write the code very clean and easy to read for quick transfer.
+      The design was handed to me in Figma, and to keep track and communicate my progress I used their planning tool Clickup.`,
+    icons: [
+      'less','pug','es6','git-branch',
+    ]
   },
   {
     title: 'INNOU',
@@ -13,6 +25,7 @@ export default [
     tags: [
       'Development',
       'Design',
+      'UX/UI',
       'Animation',
       'Illustration',
       'Project management',

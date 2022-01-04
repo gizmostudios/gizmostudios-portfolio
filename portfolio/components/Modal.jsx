@@ -56,9 +56,9 @@ const Modal = ({ title, children, onClose, onPrev, onNext }) => {
           </header>
 
           <div
-            className="bg-gray-800"
+            className="bg-gray-800 overflow-y-auto"
             style={{
-              minHeight: `calc(100vh - 13.5rem)`,
+              height: `calc(100vh - 13.5rem)`,
             }}
           >
             {children}

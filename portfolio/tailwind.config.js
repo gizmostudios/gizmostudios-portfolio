@@ -11,6 +11,9 @@ module.exports = {
       padding: '2rem'
     },
     extend: {
+      flex: {
+        '2': '2 2 0%'
+      },
       fontFamily: {
         sans: ['Titillium Web', ...defaultTheme.fontFamily.sans]
       },
@@ -20,6 +23,9 @@ module.exports = {
           dark: '#402',
           900: '#800',
           600: '#a03'
+        },
+        gray: {
+          default: '#aaa'
         },
         secondary: {
           default: '#0aa'

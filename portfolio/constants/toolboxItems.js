@@ -90,7 +90,7 @@ export default [
       title: 'Misc',
       icons: [
         { title: 'Computer repairs', file: 'repair' },
-        { title: 'Carpetry', file: 'saw' },
+        { title: 'Carpentry', file: 'saw' },
         { title: 'Sculpting', file: 'clay' },
       ],
     },
