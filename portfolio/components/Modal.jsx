@@ -1,47 +1,67 @@
+import { useState } from 'react'
 import styles from '../styles/Modal.module.scss'
 import Button, { ButtonGroup } from '../components/Button'
 
-const Modal = ({ title, children, open, onClose, onPrev, onNext }) => {
+const Modal = ({ title, children, onClose, onPrev, onNext }) => {
+  const [modalIsClosing, setModalIsClosing] = useState(false)
+
+  const closeModal = () => {
+    setModalIsClosing(true)
+
+    setTimeout(() => {
+      setModalIsClosing(false)
+      onClose()
+    }, 300)
+  }
+
   return (
     <div
       className={`fixed top-0 left-0 w-screen h-screen ${styles.modalWrapper}`}
     >
       <div
-        className="absolute top-0 left-0 w-screen h-screen bg-black opacity-80"
-        onClick={onClose}
+        className={`absolute top-0 left-0 w-screen h-screen bg-shade-80 ${
+          modalIsClosing ? 'animate-fadeOut' : 'animate-fadeIn'
+        }`}
+        onClick={closeModal}
       />
 
-      <div className="absolute left-0 bottom-0 w-full">
-        <div className="container">
-          <div className="rounded-t-md overflow-hidden">
-            <header className="flex items-center justify-between relative bg-primary-default px-4 py-2">
-              <h2>{title}</h2>
+      <div
+        className="w-screen sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl absolute bottom-0 left-1/2"
+        style={{ transform: 'translateX(-50%)' }}
+      >
+        <div
+          className={`rounded-t-md overflow-hidden ${
+            modalIsClosing ? 'animate-slidedown' : 'animate-slideup'
+          }`}
+        >
+          <header className="flex items-center justify-start sm:justify-center relative bg-primary-default px-4 py-5">
+            <h2 className="text-2xl">{title}</h2>
 
-              <ButtonGroup className="">
-                {[
-                  { func: onPrev, label: '&lt;' },
-                  { func: onNext, label: '&gt;' },
-                  { func: onClose, label: '&times;' },
-                ].map((btn, index) => {
-                  return (
-                    <Button
-                      onClick={btn.func}
-                      innerHtml={btn.label}
-                      borderColor="primary-dark"
-                    />
-                  )
-                })}
-              </ButtonGroup>
-            </header>
+            <ButtonGroup className="absolute right-3">
+              {[
+                { func: onPrev, label: '&lt;' },
+                { func: onNext, label: '&gt;' },
+                { func: closeModal, label: '&times;' },
+              ].map((btn, index) => {
+                return (
+                  <Button
+                    key={index}
+                    onClick={btn.func}
+                    innerHtml={btn.label}
+                    borderColor="primary-dark"
+                  />
+                )
+              })}
+            </ButtonGroup>
+          </header>
 
-            <div
-              className="bg-gray-800 px-4 py-4"
-              style={{
-                minHeight: `calc(100vh - 15rem)`,
-              }}
-            >
-              {children}
-            </div>
+          <div
+            className="bg-gray-800"
+            style={{
+              minHeight: `calc(100vh - 13.5rem)`,
+            }}
+          >
+            {children}
           </div>
         </div>
       </div>

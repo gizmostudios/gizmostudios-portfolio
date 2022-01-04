@@ -37,7 +37,7 @@ const About = ({ id }) => {
         <h2 className="mb-4 text-4xl">{aboutTitle}</h2>
         {aboutText.map((text, index) => {
           return (
-            <p key="index" className="mb-4">
+            <p key={index} className="mb-4">
               {text}
             </p>
           )

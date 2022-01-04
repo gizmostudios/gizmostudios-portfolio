@@ -4,6 +4,7 @@ export default [
     path: 'salarisjobs',
     thumbnail: 'thumbnail.png',
     tags: ['Development'],
+    video: 'salarisjobs-video.mp4'
   },
   {
     title: 'INNOU',

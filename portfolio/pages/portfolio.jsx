@@ -8,6 +8,7 @@ import Card from '../components/Card'
 import Tag from '../components/Tag'
 import Footer from '../components/Footer'
 import Modal from '../components/Modal'
+import Project from '../components/Project'
 
 import menuItems from '../constants/menuItems'
 import portfolioItems from '../constants/portfolioItems'
@@ -18,17 +19,27 @@ const basePath = '/projects'
 const Portfolio = () => {
   const [modalOpen, setModalOpen] = useState(false)
   const [modalTitle, setModalTitle] = useState('')
-  const [modalContents, setModalContents] = useState(
-    'Project details will come soon.'
-  )
+  const [modalContents, setModalContents] = useState('')
 
   const handleCardClick = (cardIndex) => {
-    setModalTitle(portfolioItems[cardIndex].title)
+    const currentItem = portfolioItems[cardIndex]
+
+    setModalTitle(currentItem.title)
+    setModalContents(
+      <Project
+        path={`${basePath}/${currentItem.path}`}
+        video={currentItem.video}
+        title={currentItem.title}
+        date={currentItem.date}
+      />
+    )
     setModalOpen(true)
+    document.body.style.overflow = 'hidden'
   }
 
   const handleModalClose = () => {
     setModalOpen(false)
+    document.body.style.overflow = 'visible'
   }
 
   return (
@@ -39,13 +50,17 @@ const Portfolio = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <video
-        className={styles.backgroundVideo}
-        src="/swirls-chips.mp4"
-        autoPlay
-        muted
-        loop
-      />
+      {!modalOpen && (
+        <div className={`animate-fadeIn ${styles.backgroundVideoContainer}`}>
+          <video
+            className={styles.backgroundVideo}
+            src="/swirls-chips.mp4"
+            autoPlay
+            muted
+            loop
+          />
+        </div>
+      )}
 
       <HeaderNav items={menuItems} />
 
@@ -55,11 +70,13 @@ const Portfolio = () => {
         <h2 className="text-3xl mb-5">Illustrations</h2>
 
         <Button
-          className="mb-4 max-w-xs"
+          className="mb-4"
           link="https://instagram.com/gizmostudios"
           target="_blank"
+          icon="instagram"
+          autoWidth
         >
-          Visit my Instagram account
+          Visit my Instagram page
         </Button>
 
         <h2 className="text-3xl mb-4">Clients</h2>
@@ -67,7 +84,7 @@ const Portfolio = () => {
         <div
           className={`
           grid
-          grid-cols-2
+          grid-cols-1
           sm:grid-cols-2
           md:grid-cols-3
           lg:grid-cols-4
@@ -78,6 +95,8 @@ const Portfolio = () => {
           {portfolioItems.map((item, index) => {
             return (
               <Card
+                key={index}
+                className="max-w-sm"
                 image={`${basePath}/${item.path}/${item.thumbnail}`}
                 onClick={() => handleCardClick(index)}
               >

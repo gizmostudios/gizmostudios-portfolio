@@ -23,6 +23,49 @@ module.exports = {
         },
         secondary: {
           default: '#0aa'
+        },
+        shade: {
+          80: 'rgba(0,0,0,.8)'
+        }
+      },
+      animation: {
+        'slideup': 'slideUp .3s ease-out forwards',
+        'slidedown': 'slideDown .3s ease-out forwards',
+        'fadeIn': 'fadeIn .3s linear forwards',
+        'fadeOut': 'fadeOut .3s linear forwards',
+      },
+      keyframes: {
+        slideUp: {
+          '0%': {
+            transform: 'translateY(100%)'
+          },
+          '100%': {
+            transform: 'translateY(0)'
+          },
+        },
+        slideDown: {
+          '0%': {
+            transform: 'translateY(0)'
+          },
+          '100%': {
+            transform: 'translateY(100%)'
+          },
+        },
+        fadeIn: {
+          from: {
+            opacity: 0
+          },
+          to: {
+            opacity: 1
+          }
+        },
+        fadeOut: {
+          from: {
+            opacity: 1
+          },
+          to: {
+            opacity: 0
+          }
         }
       }
     },

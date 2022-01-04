@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styles from '../styles/Button.module.scss'
 
 const Button = ({
+  autoWidth,
   link,
   children,
   className,
@@ -10,22 +11,27 @@ const Button = ({
   target,
   onClick,
   innerHtml,
+  icon,
 }) => {
   const classes = `
     px-4
     py-3
-    flex
     items-center
     justify-center
-    ${!transparent && 'bg-primary-default'}
     rounded-lg
-    ${!transparent && 'border-b-4'}
-    ${borderColor ? 'border-' + borderColor : 'border-primary-dark'}
-    ${borderColor && 'border-2'}
     hover:bg-primary-600
     transition-colors
+    ${autoWidth ? 'inline-flex' : 'flex'}
+    ${!transparent && 'bg-primary-default'}
+    ${!transparent && 'border-b-4'}
+    ${borderColor ? 'border-' + borderColor : 'border-primary-dark'}
+    ${borderColor ? 'border-2' : ''}
     ${className || ''}
   `
+
+  const iconTag = icon ? (
+    <img src={`/icons/${icon}.svg`} className="invert w-6 ml-3" />
+  ) : null
 
   return link ? (
     <Link href={link}>
@@ -35,6 +41,7 @@ const Button = ({
         dangerouslySetInnerHTML={innerHtml ? { __html: innerHtml } : null}
       >
         {children}
+        {iconTag}
       </a>
     </Link>
   ) : (
