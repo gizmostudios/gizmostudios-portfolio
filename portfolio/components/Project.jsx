@@ -43,7 +43,10 @@ const Project = ({ data, root }) => {
 
   return (
     <div className="pb-10">
-      <div className="bg-black flex justify-center" style={{ minHeight: 500 }}>
+      <div
+        className="bg-black flex justify-center"
+        style={{ minHeight: 500, maxHeight: 650 }}
+      >
         {data.heroVideo && (
           <video
             src={`${path}/${data.heroVideo}`}
@@ -85,21 +88,17 @@ const Project = ({ data, root }) => {
       </article>
 
       <article className="p-4 sm:p-8 flex w-full overflow-x-auto gap-4">
-        <Device
-          className="flex-none"
-          type="phone"
-          image={`${path}/${data.phoneImage}`}
-        />
-        <Device
-          className="flex-none"
-          type="tablet"
-          image={`${path}/${data.tabletImage}`}
-        />
-        <Device
-          className="flex-none"
-          type="desktop"
-          image={`${path}/${data.desktopImage}`}
-        />
+        {data.devices &&
+          data.devices.map((device, index) => {
+            return (
+              <Device
+                key={index}
+                className="flex-none"
+                type={device.type}
+                image={`${path}/${device.image}`}
+              />
+            )
+          })}
       </article>
     </div>
   )

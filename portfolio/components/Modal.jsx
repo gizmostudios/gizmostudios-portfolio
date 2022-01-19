@@ -58,7 +58,7 @@ const Modal = ({ title, children, onClose, onPrev, onNext }) => {
           <div
             className="bg-gray-800 overflow-y-auto"
             style={{
-              height: `calc(100vh - 13.5rem)`,
+              height: `calc(100vh - 7rem)`,
             }}
           >
             {children}

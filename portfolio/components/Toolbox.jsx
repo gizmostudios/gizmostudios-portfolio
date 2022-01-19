@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from '../styles/Skillset.module.scss'
-// import Image from 'next/image'
 import Progress from './Progress'
+import Title from '../components/Title'
 import toolboxItems from '../constants/toolboxItems'
 
 const Icons = ({ icons }) => {
@@ -40,7 +40,7 @@ const Toolbox = () => {
 
   return (
     <div>
-      <h2 className="mb-4 text-4xl">Toolbox</h2>
+      <Title size="2">Toolbox</Title>
 
       <div
         className={`flex flex-col md:flex-row md:gap-8 ${styles.skillColumns}`}

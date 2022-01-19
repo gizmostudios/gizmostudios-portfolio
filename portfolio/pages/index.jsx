@@ -5,6 +5,7 @@ import Separator from '../components/Separator'
 import HeaderNav from '../components/HeaderNav'
 import Hero from '../components/Hero'
 import About from '../components/About'
+import Process from '../components/Process'
 import Toolbox from '../components/Toolbox'
 import Footer from '../components/Footer'
 
@@ -35,9 +36,11 @@ const Home = () => {
       <main className={`container ${styles.main}`}>
         <About id="about" />
         <Toolbox />
-
-        <Separator />
       </main>
+
+      <Separator />
+
+      <Process id="process" />
 
       <Footer />
     </>

@@ -1,4 +1,5 @@
 import Logo from '../components/Logo'
+import Title from '../components/Title'
 import styles from '../styles/Hero.module.scss'
 
 const Hero = ({ id }) => {
@@ -19,8 +20,10 @@ const Hero = ({ id }) => {
         className={`flex flex-col items-center justify-center relative pt-14 ${styles.heroContent}`}
       >
         <Logo size={3} />
-        <h1 className="mt-14 text-4xl text-red">GizmoStudios</h1>
-        <p>Art & Development</p>
+        <Title size="1" className="mt-14" spacing="2" color="white">
+          GizmoStudios
+        </Title>
+        <p>Art & Tech</p>
       </div>
     </div>
   )

@@ -5,9 +5,12 @@ export default [
     thumbnail: 'thumbnail.png',
     tags: ['Development'],
     heroVideo: 'video-main.mp4',
-    phoneImage: 'iphone2.jpg',
-    tabletImage: 'ipad.jpg',
-    desktopImage: 'imac2.jpg',
+    devices: [
+      {type: 'phone', image: 'iphone2.jpg'},
+      {type: 'tablet', image: 'ipad.jpg'},
+      {type: 'desktop', image: 'imac2.jpg'}
+    ],
+
     year: '2021',
     description: `
       For a Dutch internet agency I was tasked to build the responsive static front-end for this website as quick and vanilla as possible,

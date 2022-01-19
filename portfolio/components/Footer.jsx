@@ -1,4 +1,7 @@
-// import Image from 'next/image'
+import Title from '../components/Title'
+
+const date = new Date()
+const disclaimer = `GizmoStudios ${date.getFullYear()}`
 
 const footerItems = [
   {
@@ -38,7 +41,9 @@ const Footer = () => {
   return (
     <footer id="contact" className="w-full bg-primary-default">
       <div className="container py-20">
-        <h2 className="text-4xl mb-8">Get in touch!</h2>
+        <Title size="2" color="white" spacing="8">
+          Get in touch!
+        </Title>
 
         <ul className="columns-2 lg:columns-3 max-w-xl">
           {footerItems.map((item, index) => {
@@ -72,7 +77,7 @@ const Footer = () => {
         >
           ©
         </span>
-        <span>GizmoStudios 2021</span>
+        <span>{disclaimer}</span>
       </div>
     </footer>
   )

@@ -1,6 +1,7 @@
 import styles from '../styles/About.module.scss'
 // import Image from 'next/image'
 import Button from '../components/Button'
+import Title from '../components/Title'
 
 const About = ({ id }) => {
   const aboutTitle = 'About me'
@@ -25,7 +26,7 @@ const About = ({ id }) => {
       text: 'View my portfolio',
     },
     {
-      link: '/GizmoStudios-CV-2021-v3.pdf',
+      link: '/GizmoStudios-CV-2022-v1.pdf',
       text: 'Download my CV',
       target: '_blank',
     },
@@ -34,7 +35,7 @@ const About = ({ id }) => {
   return (
     <div id={id} className="flex flex-col md:flex-row gap-4 max-w-7xl pt-8">
       <div className="flex-1 flex flex-col items-start justify-start py-12 order-2 md:order-1">
-        <h2 className="mb-4 text-4xl">{aboutTitle}</h2>
+        <Title size="2">{aboutTitle}</Title>
         {aboutText.map((text, index) => {
           return (
             <p key={index} className="mb-4">
