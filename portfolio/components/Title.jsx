@@ -4,13 +4,11 @@ const Title = ({ children, size, className, spacing, color }) => {
   ]
   const textColor = color ? `text-${color}` : 'text-primary-600'
   const CustomTag = `h${size || 1}`
-  const marginBottom = spacing || 4
+  const marginBottom = spacing ? `mb-${spacing}` : `mb-4`
 
   return (
     <CustomTag
-      className={`${textSize} ${textColor} ${
-        className || ''
-      } mb-${marginBottom}`}
+      className={`${textSize} ${textColor} ${className || ''} ${marginBottom}`}
     >
       {children}
     </CustomTag>

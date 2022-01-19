@@ -50,17 +50,19 @@ const Process = ({ id }) => {
           return (
             <article
               key={index}
-              className="flex gap-4 pt-8 mt-8 border-gray-600"
+              className="flex flex-col md:flex-row gap-4 pt-8 mt-8 border-gray-600"
               style={{ borderTopWidth: 1 }}
             >
               <div
                 className={`flex justify-center flex-1 ${
-                  index % 2 ? 'order-2' : 'order-1'
+                  index % 2 ? 'md:order-2' : 'md:order-1'
                 }`}
               >
                 <img src={article.image} width="300px" height="350px" />
               </div>
-              <div className={`flex-1 ${index % 2 ? 'order-1' : 'order-2'}`}>
+              <div
+                className={`flex-1 ${index % 2 ? 'md:order-1' : 'md:order-2'}`}
+              >
                 <Title size="3">{article.title}</Title>
                 <p>{article.text}</p>
               </div>
